@@ -1,5 +1,5 @@
 var utils = require('shipit-utils');
-var path = require('path');
+var path = require('path2/posix');
 var moment = require('moment');
 var chalk = require('chalk');
 var _ = require('lodash');
@@ -68,7 +68,7 @@ module.exports = function (gruntOrShipit) {
     function remoteCopy() {
       var options = _.get(shipit.config, 'deploy.remoteCopy') || {rsync: '--del'};
       var rsyncFrom = shipit.config.rsyncFrom || shipit.config.workspace;
-      var uploadDirPath = path.resolve(rsyncFrom, shipit.config.dirToCopy || '');
+      var uploadDirPath = require('path').resolve(rsyncFrom, shipit.config.dirToCopy || '');
 
       shipit.log('Copy project to remote servers.');
 
