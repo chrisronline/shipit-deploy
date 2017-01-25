@@ -1,5 +1,5 @@
 var utils = require('shipit-utils');
-var path = require('path2/posix');
+var path = require('path');
 var moment = require('moment');
 var chalk = require('chalk');
 var _ = require('lodash');
